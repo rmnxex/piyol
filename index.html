@@ -116,6 +116,8 @@
       If my soul could write music, it would write your name in every note, because loving you has become the most beautiful part of who I am.  
       And if the world ever grows loud, I hope you remember this: in every version of my life, my heart would still find its way back to you.
     </div>
+
+    <a href="https://open.spotify.com/playlist/6qey9kNPOLnBgBE0JitQhF?si=tBo-U4HZTQu6jGxrmNEFZQ" target="_blank" class="button" id="playlist-button" style="display:none; margin-top:2rem;">a gift</a>
   </section>
 
   <footer>
@@ -125,6 +127,7 @@
   <script>
     function revealNote() {
       document.getElementById('note').classList.toggle('show');
+      document.getElementById('playlist-button').style.display = 'inline-block';
       const music = document.getElementById('bg-music');
       music.play();
     }
