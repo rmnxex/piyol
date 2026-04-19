@@ -72,6 +72,7 @@
     }
 
     .hidden-note {
+      pointer-events: none;
       margin-top: 2rem;
       max-width: 600px;
       font-size: 1.1rem;
@@ -82,6 +83,7 @@
     }
 
     .hidden-note.show {
+      pointer-events: auto;
       opacity: 1;
       transform: translateY(0);
     }
@@ -126,7 +128,9 @@
     function revealNote() {
       document.getElementById('note').classList.toggle('show');
       const music = document.getElementById('bg-music');
-      music.play();
+      if (music) {
+        music.play().catch(() => {});
+      }
     }
   </script>
   <audio id="bg-music" loop>
