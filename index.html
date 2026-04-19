@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f4f1ea;
+      color: #1c1c1c;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(to bottom, #f4f1ea 0%, #ece7dd 100%);
+    }
+
+    .album-title {
+      font-size: clamp(4rem, 12vw, 9rem);
+      letter-spacing: -10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #111;
+      line-height: 0.9;
+    }
+
+    .subtitle {
+      margin-top: 1rem;
+      font-size: 1rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #666;
+    }
+
+    .message {
+      max-width: 700px;
+      margin-top: 3rem;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #222;
+    }
+
+    .button {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      border: 1px solid #111;
+      background: transparent;
+      cursor: pointer;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background: #111;
+      color: #f4f1ea;
+    }
+
+    .hidden-note {
+      margin-top: 2rem;
+      max-width: 600px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .hidden-note.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      padding: 3rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1 class="album-title">PIA</h1>
+    <p class="subtitle">for my favorite .... (isi sendiri)</p>
+
+    <div class="message">
+      Some people arrive quietly, and somehow change the color of everything.  
+      Since you came into my life, the ordinary feels softer, warmer, brighter.
+      This little page is just a reminder that in my world, you are the most beautiful song.
+    </div>
+
+    <button class="button" onclick="revealNote()">open letter</button>
+
+    <div class="hidden-note" id="note">
+      I never thought a small coincidence can turn out to be deep like this. Being with you feels like hearing a song that says everything I never knew how to say.  
+      You came into my life like a quiet melody, soft at first, then suddenly becoming the only sound my heart wanted to follow.  
+      In your presence, even silence feels sacred, and every moment with you turns into something tender and golden.  
+      If my soul could write music, it would write your name in every note, because loving you has become the most beautiful part of who I am.  
+      And if the world ever grows loud, I hope you remember this: in every version of my life, my heart would still find its way back to you.
+    </div>
+  </section>
+
+  <footer>
+    made with love
+  </footer>
+
+  <script>
+    function revealNote() {
+      document.getElementById('note').classList.toggle('show');
+      const music = document.getElementById('bg-music');
+      music.play();
+    }
+  </script>
+  <audio id="bg-music" loop>
+    <source src="godspeed.mp3" type="audio/mpeg">
+  </audio>
+</body>
+</html>
